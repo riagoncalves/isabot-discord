@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const basename = path.basename(__filename);
-const publicController = {};
+const adminController = {};
 
 fs
   .readdirSync(__dirname)
@@ -10,7 +10,7 @@ fs
   })
   .forEach(file => {
     const fileName = file.substring(0, file.length - 3).replace('Controller', '');
-    publicController[fileName] = require(path.join(__dirname, file));
+    adminController[fileName] = require(path.join(__dirname, file));
   });
 
-module.exports = publicController;
+module.exports = adminController;
