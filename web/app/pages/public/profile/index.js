@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from '../../components/layout';
+import { Layout } from '../../../components/public';
 import Router from 'next/router';
-import donut from '../../assets/images/donut.png';
-import edit from '../../assets/images/edit.svg';
+import donut from '../../../assets/images/donut.png';
+import edit from '../../../assets/images/edit.svg';
 
 export default class Profile extends React.Component {
   static async getInitialProps({ req, query }) {

@@ -80,6 +80,7 @@ module.exports = () => {
     });
 
     server.use('/', require('./routes/public'));
+    server.use('/admin', require('./routes/admin'));
 
     server.all('*', (req, res) => {
       return handle(req, res);

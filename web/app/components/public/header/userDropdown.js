@@ -1,5 +1,5 @@
 import React from 'react';
-import arrowDown from '../assets/images/down-arrow.svg';
+import arrowDown from '../../../assets/images/down-arrow.svg';
 
 const UserDropdown = (props) => {
   return (

@@ -12,7 +12,7 @@ module.exports = {
         },
       });
 
-    return res.locals.app.render(req, res, '/profile', {
+    return res.locals.app.render(req, res, '/public/profile', {
       background: background ? background.link : process.env.DEFAULT_PFP,
     });
   },
@@ -36,7 +36,7 @@ module.exports = {
         include: ['Background'],
       }));
 
-    return res.locals.app.render(req, res, '/profile/edit', {
+    return res.locals.app.render(req, res, '/public/profile/edit', {
       background: background ? background.link : process.env.DEFAULT_PFP,
       inventory: userbackgrounds,
     });

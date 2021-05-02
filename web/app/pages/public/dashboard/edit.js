@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../components/layout';
+import { Layout } from '../../../components/public';
 
 export default class Guild extends React.Component {
   static async getInitialProps({ req, query }) {

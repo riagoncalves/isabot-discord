@@ -6,7 +6,7 @@ module.exports = {
       .findAll()
       .then(
         (commands) => {
-          return res.locals.app.render(req, res, '/commands', {
+          return res.locals.app.render(req, res, '/public/commands', {
             moderation: commands.filter(
               (command) => command.category == 'Moderation'),
             cosmetics: commands.filter(
@@ -26,7 +26,7 @@ module.exports = {
   new(req, res) {
     if(!req.user) return res.redirect('/');
     if (req.user.userID != process.env.OWNER_ID) return res.redirect('/');
-    return res.locals.app.render(req, res, '/commands/new', req.query);
+    return res.locals.app.render(req, res, '/public/commands/new', req.query);
   },
 
   async create(req, res) {
@@ -73,7 +73,7 @@ module.exports = {
         },
       });
 
-    return res.locals.app.render(req, res, '/commands/edit', {
+    return res.locals.app.render(req, res, '/public/commands/edit', {
       command: command.dataValues,
     });
   },

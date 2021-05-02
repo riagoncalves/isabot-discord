@@ -4,7 +4,7 @@ const Guild = require('../../../db/models').Guild;
 module.exports = {
   index(req, res) {
     if(!req.user) return res.redirect('/');
-    return res.locals.app.render(req, res, '/dashboard',
+    return res.locals.app.render(req, res, '/public/dashboard',
       {
         profile: res.locals.discordProfile,
         botGuilds: client.guilds,
@@ -13,7 +13,7 @@ module.exports = {
   },
 
   async show(req, res) {
-    if(!req.user) return res.redirect('/dashboard');
+    if(!req.user) return res.redirect('/public/dashboard');
     let guildConfirm = false;
 
     client.guilds.cache.forEach(guild => {
@@ -22,7 +22,7 @@ module.exports = {
       }
     });
 
-    if(!guildConfirm) return res.redirect('/dashboard');
+    if(!guildConfirm) return res.redirect('/public/dashboard');
     const guild = client.guilds.cache.filter(
       (sGuild) => sGuild.id == req.params.guildID);
 
@@ -36,7 +36,7 @@ module.exports = {
     if (!guild) return res.status(404);
     if (!dbGuild) return res.status(404);
 
-    return res.locals.app.render(req, res, '/dashboard/edit',
+    return res.locals.app.render(req, res, '/public/dashboard/edit',
       {
         profile: res.locals.discordProfile,
         guild: Array.from(guild.values())[0],

@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
-import Layout from '../../components/layout';
-import save from '../../assets/images/save.svg';
+import { Layout } from '../../../components/public';
+import save from '../../../assets/images/save.svg';
 
 export default class ProfileEdit extends React.Component {
   static async getInitialProps({ req, query }) {
