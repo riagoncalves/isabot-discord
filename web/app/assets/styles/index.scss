@@ -1,9 +1,12 @@
 @import 'config/vars';
 @import 'config/mixins';
 @import 'common/reset';
+@import 'vendor/tailwind';
 @import 'common/typography';
 @import 'common/buttons';
-@import 'common/page';
+@import 'common/general';
+@import 'common/public_layout';
+@import 'common/admin_layout';
 @import 'components/header';
 @import 'components/hero';
 @import 'components/dashboard';

@@ -7,14 +7,14 @@ export default {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       dropdownMenu.classList.toggle('active');
-      arrowDown.classList.toggle('active');
+      if(arrowDown) arrowDown.classList.toggle('active');
     });
 
     window.addEventListener('click', (e) => {
       e.stopPropagation();
       if (dropdownMenu.classList.contains('active')) {
         dropdownMenu.classList.toggle('active');
-        arrowDown.classList.toggle('active');
+        if(arrowDown) arrowDown.classList.toggle('active');
       }
     });
   },

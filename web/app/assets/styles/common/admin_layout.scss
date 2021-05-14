@@ -1,0 +1,27 @@
+$section-name: #{$project-prefix}admin-wrap;
+
+.#{$section-name} {
+  width: 100%;
+  height: 100%;
+
+  .user-dropdown {
+
+    &-menu {
+      visibility: hidden;
+      transition: ease all 100ms;
+      transform: scale(.9) translate(.5rem, -.5rem);
+      opacity: 0;
+      z-index: 99;
+
+      &.active {
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -52,20 +52,17 @@ export default class Dashboard extends React.Component {
                   </button>
 
 
-                  <div className="ml-4 relative flex-shrink-0">
+                  <div className="ml-4 relative flex-shrink-0" data-control="dropdown">
                     <div>
-                      <button type="button" className="bg-white rounded-full flex text-sm ring-2 ring-white ring-opacity-20 focus:outline-none focus:ring-opacity-100" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                        <span className="sr-only">Open user menu</span>
-                        <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixqx=6tQHmorjQ6&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
+                      <button className="user-dropdown bg-white rounded-full flex text-sm ring-2 ring-white ring-opacity-20 focus:outline-none focus:ring-opacity-100">
+                        <img className="h-8 w-8 rounded-full" src={props.user.photo} alt=""/>
                       </button>
                     </div>
 
-                    <div className="origin-top-right z-40 absolute -right-2 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1">
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
-
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
-
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
+                    <div className="user-dropdown-menu origin-top-right z-40 absolute -right-2 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <a href="/" className="block px-4 py-2 text-sm text-gray-700">Back to Website</a>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700">Settings</a>
+                      <a href="/logout" className="block px-4 py-2 text-sm text-gray-700">Sign out</a>
                     </div>
                   </div>
                 </div>
@@ -195,15 +192,15 @@ export default class Dashboard extends React.Component {
                         <div className="sm:flex sm:items-center sm:justify-between">
                           <div className="sm:flex sm:space-x-5">
                             <div className="flex-shrink-0">
-                              <img className="mx-auto h-20 w-20 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixqx=6tQHmorjQ6&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
+                              <img className="mx-auto h-20 w-20 rounded-full" src={props.user.photo} alt="Admin's Profile Photo"/>
                             </div>
                             <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
                               <p className="text-sm font-medium text-gray-600">Welcome back,</p>
-                              <p className="text-xl font-bold text-gray-900 sm:text-2xl">Chelsea Hagon</p>
-                              <p className="text-sm font-medium text-gray-600">Human Resources Manager</p>
+                              <p className="text-xl font-bold text-gray-900 sm:text-2xl">{props.user.username.split('#')[0]}</p>
+                              <p className="text-sm font-medium text-gray-600">Admin</p>
                             </div>
                           </div>
-                          <div className="mt-5 flex justify-center sm:mt-0">
+                          <div className="mt-5 flex justify-center sm:mt-0 hidden">
                             <a href="#" className="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
                               View profile
                             </a>

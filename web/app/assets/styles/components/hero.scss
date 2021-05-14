@@ -2,12 +2,12 @@ $section-name: #{$project-prefix}hero;
 
 .#{$section-name} {
   display: flex;
+  height: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   .text-center {
-    padding: 20rem 0;
 
     @include screenXs {
       padding: 0;

@@ -1,4 +1,5 @@
-import '../../../assets/styles/admin/index.scss';
+import '../../../assets/styles/index.scss';
+import '../../../assets/scripts';
 import React from 'react';
 import Head from 'next/head';
 const Layout = (props) => (
@@ -23,7 +24,7 @@ const Layout = (props) => (
       <meta name="description" content="Your personal administration bot with custom profiles and a lot of features."/>
       <meta name="keywords" content="discord, bot, administration, anime" />
     </Head>
-    <div className="shinobu-wrap">
+    <div className="shinobu-admin-wrap">
       {props.children}
     </div>
   </main>

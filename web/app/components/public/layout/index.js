@@ -1,5 +1,5 @@
-import '../../../assets/styles/public/index.scss';
-import '../../../assets/scripts/public';
+import '../../../assets/styles/index.scss';
+import '../../../assets/scripts';
 import React from 'react';
 import Head from 'next/head';
 import Header from '../header';
@@ -41,7 +41,9 @@ const Layout = (props) => (
     </Head>
     <div className="shinobu-wrap">
       <Header user={props.user}/>
-      {props.children}
+      <div  className="shinobu-wrap-container">
+        {props.children}
+      </div>
     </div>
   </main>
 );

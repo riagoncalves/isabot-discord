@@ -1,11 +1,11 @@
-$section-name: #{$project-prefix}profile;
+$section-name: #{$project-prefix}profile_edit;
 
 .#{$section-name} {
   display: flex;
   position: relative;
   width: 100%;
   height: 100%;
-  margin-top: 2rem;
+  padding-top: 2rem;
   flex-direction: column;
 
   &-background {
@@ -67,7 +67,7 @@ $section-name: #{$project-prefix}profile;
     border-radius: 10px;
     z-index: 2;
 
-    &-edit {
+    &-save {
       position: absolute;
       display: flex;
       padding: .2rem .5rem;
@@ -78,6 +78,9 @@ $section-name: #{$project-prefix}profile;
       background-color: $main;
       border-radius: 5px 5px 0 0;
       transition: ease all 250ms;
+      outline: none;
+      border: none;
+      cursor: pointer;
       
       &-img {
         width: .7rem;
@@ -94,116 +97,37 @@ $section-name: #{$project-prefix}profile;
       }
     }
 
-    &-info {
-      padding-right: 1rem;
-
-      &-level {
-        display: flex;
-        flex-direction: column;
-  
-        &-bar {
-          display: block;
-          position: relative;
-          margin: 1rem 0 .5rem;
-          width: 100%;
-          height: 1rem;
-          border-radius: 5px;
-          background-color: $darker;
-  
-          &-completed {
-            display: block;
-            position: absolute;
-            height: 1rem;
-            left: 0;
-            top: 0;
-            border-radius: 5px;
-            background-color: $main;
-          }
-        }
-      }
-
-      &-currency {
-
-        &-single {
-          padding-top: 0.5rem;
-        }
-
-        .donuts {
-          &-img {
-            width: 1.5rem;
-          }
-
-          &-label {
-            padding: 0 .5rem;
-          }
-        }
-      }
-
-      &-rep {
-        padding-top: 2rem;
-
-        &-single {
-          padding-top: 0.5rem;
-        }
-      }
-    }
-
-
-    &-customize {
-      width: 50%;
+    .form-control {
       display: flex;
-      padding-left: 1rem;
+      padding: 1rem 0;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
 
-      img {
-        max-width: 20rem;
-
-        @include screenSm {
-          max-width: 100%;
-        }
+      label {
+        padding-bottom: .5rem;
       }
 
-      &-background {
-        padding-bottom: 2rem;
+      input, select {
+        padding: .5rem .8rem;
+        border: 2px solid transparent;
+        transition: all 150ms;
 
-        p {
-          padding-bottom: 0.5rem;
-        }
-      }
-
-      &-color {
-        width: 100%;
-        display: flex;
-        padding: 1rem 0;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-top: 1px solid $gray;
-
-        p {
-          padding: 1rem 0 .5rem;
-        }
-
-        span {
-          display: block;
-          width: 10rem;
-          height: 5rem;
+        &[type=color] {
+          width: 2.5rem;
+          height: 2.5rem;
           border-radius: 5px;
+          padding: 0;
+        }
+
+        &:active, &:focus{
+          outline: none;
+          border-color: $main;
         }
       }
 
-      @include screenSm {
-        width: 100%;
-        margin-top: 2rem;
-        padding-left: 0;
-      }
-    }
-
-    &-container {
-      @include screenSm {
-        flex-direction: column;
+      &:first-child {
+        padding-top: 0;
       }
     }
   }
