@@ -15,7 +15,7 @@
     "url": "git+https://github.com/riagoncalves/shinobu.git"
   },
   "author": "riagoncalves.dev",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/riagoncalves/shinobu/issues"
   },
